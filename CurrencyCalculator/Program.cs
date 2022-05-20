@@ -1,10 +1,5 @@
 using NLog.Web;
-//using NLog.Extensions.Logging;
-//using NLog;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
-
-//var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
-//logger.Debug("init main");
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,12 +9,6 @@ builder.Host.UseNLog();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-builder.Services.AddHttpClient("FxRates", c  =>
-{
-    c.BaseAddress = new Uri("https://www.lb.lt/webservices/FxRates/");
-    c.DefaultRequestHeaders.Add("Accept", "application/xml");
- });
 
 var app = builder.Build();
 
