@@ -5,7 +5,7 @@
 }
 
 <div class="calculator-container">
-    <form asp-controller="Calculator" asp-action="Index" id="calculatorForm" onchange="hello()">
+    <form asp-controller="Calculator" asp-action="Index" id="calculatorForm">
         <div class="calculator-header">
             <div class="header">
                 <p>Currency calculator</p>
@@ -62,44 +62,6 @@
                 dateFormat: "yy-mm-dd"
             });
         });
-
-        //$(function(){
-        //    function getFxRate(){                
-        //       var data = $("#rateForm").serialize();
-        //       $.ajax({
-        //           type: "POST",
-        //           url: '/Rate/GetFxRate',
-        //           data: data,
-        //           success: function(){
-        //               window.location.href = "/Rate/Index";
-        //           }
-        //       });
-        //    }
-        //    $("select").on("change",getFxRate);
-        //});
-
-        function hello(){
-            console.log('Hello');
-        }
-
-        function getFxRate(){
-
-            var data = $("#rateForm").serialize();
-
-            debugger;
-
-            $.ajax({
-               type: "POST",
-               url: '/Rate/GetFxRate',
-               data: data,
-               success: function(){
-                   //window.location.href = "/Rate/Index";
-               }
-            });
-
-        }
-
-
 
     </script>
 }
